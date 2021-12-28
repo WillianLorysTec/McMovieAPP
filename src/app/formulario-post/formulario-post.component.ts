@@ -1,11 +1,6 @@
-import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Category } from './../models/Category';
-import { ICategorias } from './../searchall/ICategorias';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FormularioService } from './formulario.service';
-import { API_PATH } from 'src/environments/environment';
-import { Observable } from 'rxjs';
 import { CategoriasService } from '../searchall/categorias.service';
 
 @Component({
@@ -18,22 +13,20 @@ export class FormularioPostComponent  {
   public form: FormGroup;
   public postSet: Category[] = [];
 
-  obterTodosCarros(post: Category[]){
+  obterTodos(post: Category){
     this.categorias.MethotPost(post).subscribe(categories => {   
       console.log("ok")  ;
       })}
-
-
-
 
   add(){
     const titles = this.form.controls['title'].value;
     const imdb = this.form.controls['imdb'].value;
     const price = this.form.controls['price'].value;
-    const category = this.form.controls['category'].value;
-    this.postSet.push(new Category(titles, imdb, price, category));
+    const category = this.form.controls['category'].value;  
+    //this.postSet.push(new Category(titles, imdb, price, category));
+    const postSetHttp = new Category(titles, imdb, price, category);
     this.save();
-    this.obterTodosCarros(this.postSet);
+    this.obterTodos(postSetHttp);
 
     ///this.categorias.MethotPost(this.postSet);
     ///implementar POST
