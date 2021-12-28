@@ -11,12 +11,12 @@ import { Observable } from 'rxjs';
 export class CategoriasService {
 
   obterTodos(){
-   return this.Httpclient.get<ICategorias[]>(`${API_PATH}categories`);
+   return this.Httpclient.get<ICategorias[]>(`${API_PATH}categories`).toPromise();
   }
 
   MethotPost(film: Category[]): Observable<Category[]> {
     console.log(film)
-    return this.Httpclient.post<Category[]>(`${API_PATH}categories/post`, film)
+    return this.Httpclient.post<Category[]>(`${API_PATH}categories/post`, film);
     
     
   }
