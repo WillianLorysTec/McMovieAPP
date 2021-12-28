@@ -1,0 +1,25 @@
+<section>
+    <h1>Catalogo de Filmes</h1>
+    <button id="button1" (click)="obterTodosCarros()">Obter todos</button>
+      <table class="styled-table" align="center">
+          <thead>
+              <tr>
+                  <th>Photo</th>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Category</th>
+                  <th>Price</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let item of title">
+                  <td>image</td>
+                  <td>{{item.id}}</td>
+                  <td>{{item.title}}</td>
+                  <td>{{item.category}}</td>
+                  <td>{{item.price}}</td>
+              </tr>
+          </tbody>
+    
+      </table> 
+</section>

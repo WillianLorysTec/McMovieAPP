@@ -1,0 +1,31 @@
+<html>
+    <body>    
+        <div>
+            <form [formGroup]="form">
+                <fieldset>
+                    <label for="fname">Title</label>
+                    <input type="text"
+                    name="title" 
+                    placeholder="Title this films"
+                    formControlName="title">
+
+                    <label for="lname">IMdb</label>
+                    <input type="text" id="lname" name="imdb" placeholder="This IMdb"
+                    formControlName="imdb">
+
+                    <label for="lname">Price</label>
+                    <input type="text" id="lname" name="price" placeholder="Price this films"
+                    formControlName="price">
+
+                    <label for="Category">Category</label>
+                    <input type="text" placeholder="This category" formControlName="category">
+                
+                    <input (click)="add()" type="submit">
+                    
+                </fieldset>
+                
+            </form>
+        </div>
+
+    </body>
+</html>
