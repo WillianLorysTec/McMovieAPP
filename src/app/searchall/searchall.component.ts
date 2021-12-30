@@ -21,6 +21,7 @@ export class SearchallComponent implements OnInit {
   obterTodosCarros(){
     this.categorias.obterTodos().subscribe(categories => {
       this.title = categories
+      console.log(this.title);
       });
   
     }

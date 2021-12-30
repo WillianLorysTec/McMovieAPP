@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CategoriasService } from '../searchall/categorias.service';
 
+
 @Component({
   selector: 'app-formulario-post',
   templateUrl: './formulario-post.component.html',
@@ -13,7 +14,7 @@ export class FormularioPostComponent  {
   public form: FormGroup;
   public postSet: Category[] = [];
 
-  obterTodos(post: Category){
+  PostHttp(post: Category){
     this.categorias.MethotPost(post).subscribe(categories => {   
       console.log("ok")  ;
       })}
@@ -26,7 +27,7 @@ export class FormularioPostComponent  {
     //this.postSet.push(new Category(titles, imdb, price, category));
     const postSetHttp = new Category(titles, imdb, price, category);
     this.save();
-    this.obterTodos(postSetHttp);
+    this.PostHttp(postSetHttp);
 
     ///this.categorias.MethotPost(this.postSet);
     ///implementar POST

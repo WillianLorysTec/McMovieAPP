@@ -1,0 +1,63 @@
+
+
+<!-- <ul *ngFor="let item of contentById">
+    <li>
+        {{item.id}}
+    </li>
+    <li>
+        {{item.title}}
+    </li>
+    <li>
+        {{item.price}}
+    </li>
+    <li>
+        {{item.category}}
+    </li> 
+</ul>-->
+    
+    
+        
+        
+        
+        
+    
+
+
+<html>
+    <body> 
+        <form [formGroup]="formId">
+            <fieldset>
+                <input type="text" placeholder="digite o id" formControlName="id">
+                <button (click)="IdFromForm()">SEARCH</button>              
+            </fieldset>
+
+        <app-delete-id>
+            
+        </app-delete-id>
+
+
+        </form>   
+        <table class="styled-table" align="center">
+            <thead>
+                <tr>
+                    <th>Photo</th>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of contentById">
+                    <td>image</td>
+                    <td>{{item.id}}</td>
+                    <td>{{item.title}}</td>
+                    <td>{{item.category}}</td>
+                    <td>{{item.price}}</td>
+                </tr>
+            </tbody>
+      
+        </table> 
+
+    </body>
+</html>
